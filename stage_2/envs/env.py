@@ -3,7 +3,7 @@ import os
 import random
 from collections import OrderedDict
 
-import gymnasium as gym
+import gym
 import numpy as np
 
 from stage_2.envs.space import (
