@@ -5,3 +5,6 @@
 /IJCAI_data
 /results_3d
 /PostResults
+
+.venv
+.vscode

@@ -1,1 +1,0 @@
-python apps/draw.py --config $1 --run-id $2 --draw-file PostResults/$1/$2/_best.txt
