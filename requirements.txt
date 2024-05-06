@@ -9,4 +9,4 @@ torch==2.3.0
 torch-geometric==2.5.3
 torchvision==0.18.0
 openseespy==3.5.1.12
-git+https://github.com/rail-berkeley/rlkit
+git+https://github.com/sspangenberg/rlkit
