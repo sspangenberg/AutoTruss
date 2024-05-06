@@ -21,7 +21,7 @@ docker build -t auto-truss .
 Run container
 
 ```sh
-docker run --rm --name auto-truss auto-truss:latest --config 17_bar_case --run-id test
+docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --name auto-truss auto-truss:latest --config 17_bar_case --run-id test
 ```
 
 ## Add Customized Config

@@ -45,13 +45,13 @@ class SizeEnvReplayBuffer(EnvReplayBuffer):
 
 
 def main(args):
-    if not os.path.exists("saved_models"):
-        os.mkdir("saved_models")
+    if not os.path.exists("output/saved_models"):
+        os.makedirs("output/saved_models")
     if not os.path.exists(args.save_model_path):
-        os.mkdir(args.save_model_path)
+        os.makedirs(args.save_model_path)
     args.save_model_path = os.path.join(args.save_model_path, args.run_id)
     if not os.path.exists(args.save_model_path):
-        os.mkdir(args.save_model_path)
+        os.makedirs(args.save_model_path)
     if th.cuda.is_available():
         ptu.set_gpu_mode(True)
     env = NormalizedBoxEnv(

@@ -102,10 +102,12 @@ def get_base_config():
     # args for save and load:
     parser.add_argument("--save-KR", default=False)
     parser.add_argument("--save-diversity", type=bool, default=True)
-    parser.add_argument("--save-path", type=str, default="./results_3d/")
-    parser.add_argument("--input-path-2", type=str, default="./PostResults/")
-    parser.add_argument("--save-model-path", type=str, default="./saved_models/")
-    parser.add_argument("--finetune-model-path", type=str, default="./saved_models/")
+    parser.add_argument("--save-path", type=str, default="output/results_3d/")
+    parser.add_argument("--input-path-2", type=str, default="output/PostResults/")
+    parser.add_argument("--save-model-path", type=str, default="output/saved_models/")
+    parser.add_argument(
+        "--finetune-model-path", type=str, default="output/saved_models/"
+    )
     parser.add_argument("--OUTPUT_ALL_THRESHOLD", type=float, default=4000)
     parser.add_argument("--MASS_OUTPUT_ALL_THRESHOLD", type=float, default=4000)
     parser.add_argument("--save-invalid-factor", type=int, default=0)
@@ -123,7 +125,7 @@ def get_base_config():
     parser.add_argument(
         "--initial_state_files",
         type=str,
-        default="PostResults/",
+        default="output/PostResults/",
         help="input file for refine",
     )
     parser.add_argument(

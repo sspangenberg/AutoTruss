@@ -3,15 +3,15 @@ import os
 
 
 def main(args):
-    if not os.path.exists("PostResults"):
-        os.mkdir("PostResults")
-    if not os.path.exists("PostResults/" + args.config):
-        os.mkdir("PostResults/" + args.config)
+    if not os.path.exists("output/PostResults"):
+        os.makedirs("output/PostResults")
+    if not os.path.exists("output/PostResults/" + args.config):
+        os.makedirs("output/PostResults/" + args.config)
 
     OrgF = os.path.join(args.save_path, args.run_id)
     TarFolder = os.path.join(args.input_path_2, args.run_id)
     if not os.path.exists(TarFolder):
-        os.mkdir(TarFolder)
+        os.makedirs(TarFolder)
     OrgFolder = os.path.join(OrgF, args.transfer_filefold)
     print(OrgFolder)
 

@@ -37,9 +37,9 @@ base:
   reward_lambda: 4.0e+7
   only_position: False
 
-  save_path: results_3d/17_bar_case/
-  input_path_2: PostResults/17_bar_case/
-  save_model_path: saved_models/17_bar_case/
+  save_path: output/results_3d/17_bar_case/
+  input_path_2: output/PostResults/17_bar_case/
+  save_model_path: output/saved_models/17_bar_case/
   MASS_OUTPUT_ALL_THRESHOLD: 4000
   OUTPUT_ALL_THRESHOLD: 0
 

@@ -6,17 +6,17 @@ from utils.utils import readAlist, readFile, util_init
 
 
 def main(args):
-    if not os.path.exists("results_3d/"):
-        os.mkdir("results_3d/")
+    if not os.path.exists("output/results_3d/"):
+        os.makedirs("output/results_3d/")
 
     p, e = readFile(args.input_path)
-    if not os.path.exists("results_3d/" + args.config):
-        os.mkdir("results_3d/" + args.config)
+    if not os.path.exists("output/results_3d/" + args.config):
+        os.makedirs("output/results_3d/" + args.config)
 
     # save and load path
     LOGFOLDER = args.save_path
     if not os.path.exists(LOGFOLDER):
-        os.mkdir(LOGFOLDER)
+        os.makedirs(LOGFOLDER)
 
     if args.useAlist:
         Alist = readAlist(args.Alist_path)

@@ -84,7 +84,7 @@ def UCTs_init(args__, plist__=[], arealist__=[]):
     LOGFOLDER = os.path.join(args.save_path, args.run_id)
 
     if not os.path.exists(LOGFOLDER):
-        os.mkdir(LOGFOLDER)
+        os.makedirs(LOGFOLDER)
 
     ALLFOLDER = os.path.join(LOGFOLDER, "Reward_ALL_Result/")
     print(ALLFOLDER)
