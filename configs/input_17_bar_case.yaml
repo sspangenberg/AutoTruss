@@ -1,7 +1,7 @@
 base:
   maxp: 6
-  UCT_maxiter: 1000
-  UCT_extra_iter_for_point_pos: 1000
+  UCT_maxiter: 50000
+  UCT_extra_iter_for_point_pos: 50000
   env_dims: 2
   env_mode: Area
   coordinate_range:

@@ -5,6 +5,7 @@
 
 import sys
 
+from apps import draw
 from configs.config import get_base_config, make_config
 from stage_1 import continuous_uct_3d, noise_input_permutation_format_transfer
 from stage_2 import main_3d
@@ -21,6 +22,7 @@ def main():
     continuous_uct_3d.main(args)
     noise_input_permutation_format_transfer.main(args)
     main_3d.main(args)
+    draw.main(args)
 
 
 if __name__ == "__main__":

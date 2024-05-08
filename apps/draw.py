@@ -6,12 +6,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from truss_envs.reward import Envs_init, reward_fun
+from utils.utils import readFile
 
 time_str = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime())
 
 
 def main(args):
+    p, e = readFile(os.path.join(args.input_path_2, args.run_id, "_best.txt"))
     Envs_init(args)
+    drawGraph(p, e, args)
 
 
 def drawGraph(p, e, args, canshow=1, reward=0.0, FILENAME="output"):
@@ -119,44 +122,3 @@ def drawGraph(p, e, args, canshow=1, reward=0.0, FILENAME="output"):
         )
         print(FILENAME)
         plt.savefig(FILENAME, dpi=1000)
-
-
-def saveGraph(p, e, reward=0.0):
-    print(reward_fun(p, e))
-    if reward == 0.0:
-        reward, _, _, _, _, _ = reward_fun(p, e, mode="check")
-    for i in range(len(p)):
-        plt.scatter([p[i].vec.x], [p[i].vec.y], color="b")
-
-    for i in range(len(e)):
-        x0 = [p[e[i].u].vec.x, p[e[i].v].vec.x]
-        y0 = [p[e[i].u].vec.y, p[e[i].v].vec.y]
-        if e[i].stress < 0:
-            plt.plot(x0, y0, color="g", linewidth=e[i].area / 0.01)
-        else:
-            plt.plot(x0, y0, color="r", linewidth=e[i].area / 0.01)
-
-    plt.axis("equal")
-    plt.title(str(reward))
-    FILENAME = (
-        "./results_3d/"
-        + str(args.config)
-        + "_"
-        + str(len(p))
-        + "p"
-        + str(round(reward, 2))
-        + "_2d"
-        + ".jpg"
-    )
-    plt.savefig(FILENAME, dpi=1000)
-
-
-def draw2Graph(p1, e1, p2, e2, canshow=1):
-    sub1 = plt.subplot(1, 2, 1)
-    sub2 = plt.subplot(1, 2, 2)
-    plt.sca(sub1)
-    drawGraph(p1, e1, 0)
-    plt.sca(sub2)
-    drawGraph(p2, e2, 0)
-    if canshow == 1:
-        plt.show()
