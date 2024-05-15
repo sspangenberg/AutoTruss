@@ -1,8 +1,7 @@
 base:
   maxp: 7
-  UCT_maxiter: 20000
-  UCT_extra_iter_for_point_pos: 20000
-  greedy_upd: True
+  UCT_maxiter: 1000
+  UCT_extra_iter_for_point_pos: 1000
 
   CONSTRAINT_CROSS_EDGE: 1
   CONSTRAINT_BUCKLE: 0
@@ -14,7 +13,9 @@ base:
   slenderness_ratio_c: 180.0
   slenderness_ratio_t: 220.0
   dislimit: 0.002
-  epoch: 20
+  epoch: 10
+  num_eval_steps_per_epoch: 1000
+  batch_size: 200
 
   input_path: input/kr-sundial-newinput.txt
 

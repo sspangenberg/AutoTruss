@@ -179,7 +179,7 @@ def main(args):
         evaluation_data_collector=eval_path_collector,
         replay_buffer=replay_buffer,
         num_epochs=args.epoch,
-        num_eval_steps_per_epoch=2000,
+        num_eval_steps_per_epoch=args.num_eval_steps_per_epoch,
         num_trains_per_train_loop=args.num_trains_per_train_loop,
         num_train_loops_per_epoch=args.num_train_loops_per_epoch,
         num_expl_steps_per_train_loop=1000,
